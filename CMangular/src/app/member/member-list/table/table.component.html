@@ -1,0 +1,28 @@
+<section class="items-center lg:flex lg:h-screen font-poppins dark:bg-gray-800 ">
+    <div class="justify-center flex-1 max-w-6xl px-4 py-4 mx-auto lg:py-8 md:px-6">
+        <div class="overflow-x-auto rounded shadow dark:bg-gray-900 bg-white">
+            <app-search (memberSearchEvent)="onChangeDataMember($event)"></app-search>
+            <table class="w-full table-auto">
+                <thead class="bg-lightGray-50">
+                    <tr class="text-xs text-left text-gray-500 border-b border-gray-200 dark:border-gray-800">
+                        <th class="px-6 py-4 font-medium dark:text-gray-400">Name</th>
+                        <th class="px-6 py-4 font-medium dark:text-gray-400">Number</th>
+                        <th class="px-6 py-4 font-medium dark:text-gray-400">Date Accession</th>
+                        <th class="px-6 py-4 font-medium dark:text-gray-400">Identity</th>
+                        <th class="px-6 py-4 font-medium dark:text-gray-400">nationality</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <app-row-table [member]="member" *ngFor="let member of memberList" style="display: contents;"></app-row-table>
+                </tbody>
+            </table>
+            <div class="flex flex-wrap items-center justify-end px-6 py-3">
+                <app-pagination style="display: contents;" [pageTotal]="pageTotal" 
+                [currentPage]="currentPage" (eventEmitter)="getCurrentPageInTable($event)"></app-pagination>
+            </div>
+        </div>
+    </div>
+
+
+
+</section>

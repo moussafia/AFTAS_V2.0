@@ -1,0 +1,30 @@
+<div class="max-w-sm  bg-white border border-gray-200 relative rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+>
+   <a class="flex justify-center">
+       <img class="rounded-t-lg" src="../../../../assets/image/shark.jpeg" alt="" />
+   </a>
+   <div class="p-5">
+       <a href="#">
+           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{competitionList?.code}} </h5>
+       </a>
+       <div class="flex justify-between space-x-2 my-6">
+           <p class="category bg-gray-500 text-white py-1 px-1.5 text-center rounded-lg text-bold">#{{competitionList?.date}}</p>
+           <p class="manufacturer flex items-center text-gray-500 underline py-1 px-1.5 text-center rounded-lg text-bold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor"
+                    class="bi bi-geo-alt" viewBox="0 0 16 16">
+                    <path
+                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>            
+            {{competitionList?.location}}</p>
+       </div>
+       <p class="font-bold pricePerDay my-6"><span class="underline">Price :</span> {{competitionList?.amount}} DH</p>
+       <p class="quantity text-center text-white font-md text-lg absolute top-3 right-2 shadow-md px-3 rounded-lg ">place: {{competitionList?.numberOfParticipants}}</p>
+       <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          go here
+           <svg class="rtl:rotate-180 w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+           </svg>
+       </a>
+   </div>
+</div>

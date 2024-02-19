@@ -1,0 +1,22 @@
+<nav aria-label="page-navigation ">
+    <ul class="flex mb-4 list-style-none lg:mb-0">
+        <li class="page-item"  *ngIf="currentPage > 0">
+            <button type="button" (click)="previousPage()"
+                class="relative block px-3 py-1 mr-1 text-xs text-gray-700 transition-all duration-300 rounded-md pointer dark:text-gray-400 hover:text-gray-100 hover:bg-blue-600">Previous
+            </button>
+        </li>
+        <li class="page-item " *ngFor="let page of arrayOfPages">
+            <a href="#"
+                class="relative block px-3 py-1 mr-1 text-xs transition-all duration-300 rounded-md hover:text-blue-700 dark:hover:text-gray-400 dark:hover:bg-gray-700"
+                (click)="onChangeCurrentPage(page - 1)"
+                [ngClass]="currentPage == page - 1 ? 'selected' : 'notSelected'">
+                {{page}}
+            </a>
+        </li> 
+        <li class="page-item " *ngIf="currentPage < pageTotal -1">
+            <button type="button" (click)="nextPage()"
+                class="relative block px-3 py-1 text-xs text-gray-700 transition-all duration-300 rounded-md dark:text-gray-400 dark:hover:bg-gray-700 hover:bg-blue-100 ">Next
+            </button>
+        </li>
+    </ul>
+</nav>

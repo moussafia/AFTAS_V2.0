@@ -1,0 +1,14 @@
+.selected{
+    background-color: #2563eb; 
+    color: #f7fafc;
+}
+.selected:hover{
+    color: #1c3d5a;
+}
+.notSelected{
+    color: #4a5568;
+}
+.notSelected:hover{
+    background-color: #ebf8ff; 
+
+}

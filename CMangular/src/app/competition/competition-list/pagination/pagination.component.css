@@ -1,0 +1,12 @@
+.notSelected{
+    background-color: #ffffff;
+}
+.notSelected:hover{
+    background-color: rgb(31 41 55);
+    color: #ffffff;
+
+}
+.selected{
+    background-color: rgb(31 41 55);
+    color: #ffffff;
+}

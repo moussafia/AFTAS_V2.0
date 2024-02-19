@@ -1,0 +1,60 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 15px 10px 30px;
+    border-bottom: 3px solid #e02b60;
+    position: fixed;
+    width: calc(100% - 242px);
+    z-index: 1;
+  }
+  nav .search {
+    position: relative;
+  }
+  nav .search i {
+    margin-right: 14px;
+    padding: 14px 10px 10px 14px;
+    position: absolute;
+  }
+  nav .search input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #d7dbe6;
+    padding-left: 34px;
+  }
+  nav .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  nav .profile .notification {
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  nav .profile .notification:hover {
+    cursor: pointer;
+  }
+  nav .profile img {
+    width: 25px;
+    height: 25px;
+    margin-left: 6px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .n1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-bar {
+    display: none;
+    color: #2b2b2b;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+  }

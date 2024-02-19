@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+  ::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    background: linear-gradient(to right, #a91b70, #d82862);
+  }
+  #dashboardAdmin {
+    width: 100%;
+    background: #e5e7eb;
+    position: relative;
+    display: flex;
+  }
+  #interface {
+    width: calc(100% - 242px);
+    margin-left: 242px;
+    position: relative;
+  }
+  #homeAdmin {
+    min-height: 88vh;
+  }

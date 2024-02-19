@@ -1,0 +1,321 @@
+<div class="dashboard">
+    <h3 class="i-name">Dashboard</h3>
+    <section class="px-6 pt-6">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+                <div class="mr-4">
+                    <span
+                        class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-6 h-6 bi bi-currency-dollar" viewBox="0 0 16 16">
+                            <path
+                                d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div>
+                    <p class="mb-2 text-gray-700 dark:text-gray-400">Competition Code</p>
+                    <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                        {{competitionData?.data?.code}}</h2>
+                </div>
+            </div>
+            <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+                <div class="mr-4">
+                    <span
+                        class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-6 h-6 bi bi-bag-check" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                            </path>
+                            <path
+                                d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div>
+                    <p class="mb-2 text-gray-700 dark:text-gray-400">Star time</p>
+                    <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                        {{competitionData?.data?.startDate}}</h2>
+                </div>
+            </div>
+            <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+                <div class="mr-4">
+                    <span
+                        class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="w-6 h-6 bi bi-chat-text" viewBox="0 0 16 16">
+                            <path
+                                d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z">
+                            </path>
+                            <path
+                                d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div>
+                    <p class="mb-2 text-gray-700 dark:text-gray-400">End time</p>
+                    <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                        {{competitionData?.data?.endTime}}</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="px-6 py-6">
+        <div class="grid lg:grid-cols-[60%,1fr]  grid-cols-1 gap-6 ">
+            <div class="pt-4 bg-white rounded shadow dark:text-gray-100 dark:bg-gray-900">
+                <div class="flex justify-between  px-6 pb-4 border-b dark:border-gray-700">
+                    <h2 class="text-xl font-bold dark:text-gray-400">List of members</h2>
+                    <div class="flex items-center justify-content gap-2">
+                        <a href="#"
+                            class="px-4 py-2 font-medium hover:text-blue-600 hover:bg-white  rounded-md dark:text-blue-300 dark:border-blue-300 dark:hover:bg-blue-300 dark:hover:text-gray-700
+                             bg-blue-700 text-white"
+                             data-modal-target="calcul_rank" data-modal-toggle="calcul_rank" >
+                            calcul Rank
+                        </a>
+                        <a href="#" data-modal-target="add_hunting" data-modal-toggle="add_hunting"
+                            class="px-4 py-2 font-medium text-blue-500 rounded-md dark:text-blue-300 dark:border-blue-300 dark:hover:bg-blue-300 dark:hover:text-gray-700 hover:bg-blue-700 hover:text-white">
+                            add
+                        </a>
+                    </div>
+
+                </div>
+                <div class="p-4 overflow-x-auto">
+                    <table class="w-full table-auto">
+                        <thead>
+                            <tr class="text-xs text-left text-gray-500 dark:text-gray-400">
+                                <th class="px-6 pb-3 font-medium">Member numero</th>
+                                <th class="px-6 pb-3 font-medium ">Name</th>
+                                <th class="px-6 pb-3 font-medium">identity number </th>
+                                <th class="px-6 pb-3 font-medium">Score </th>
+                                <th class="px-6 pb-3 font-medium">Rank </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-xs bg-gray-100 dark:text-gray-400 dark:bg-transparent"
+                                *ngFor="let rank of competitionData?.data?.rankingList">
+                                <td class="px-6 py-5 font-medium">{{rank.memberResponseDto.number}}</td>
+                                <td class="px-6 py-5 font-medium ">{{rank.memberResponseDto.firstName}}
+                                    {{rank.memberResponseDto.lastName}}</td>
+                                <td class="px-6 py-5 font-medium ">{{rank.memberResponseDto.identityNumber}}</td>
+                                <td class="px-6 py-5 font-medium ">
+                                    <span
+                                        class="inline-block text-center text-green-600 bg-green-100 rounded-full dark:text-green-700 dark:bg-green-200">
+                                        {{rank.score}}</span>
+                                </td>
+                                <td class="px-6 py-5 ">
+                                    <span
+                                        class="inline-block px-2 py-1 text-center text-green-600 bg-green-100 rounded-full dark:text-green-700 dark:bg-green-200">
+                                        {{rank.rank}}
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="p-6 mb-2 bg-white rounded shadow dark:text-gray-100 card dark:bg-gray-900">
+                <div class="flex justify-between items-center ">
+                    <h2 class="mb-6 text-xl font-semibold dark:text-gray-400"> Podium </h2>
+                    <a href="#" data-modal-target="calculPodium" data-modal-toggle="calculPodium"
+                    class="px-4 py-2 font-medium text-blue-500 rounded-md dark:text-blue-300 dark:border-blue-300 dark:hover:bg-blue-300 dark:hover:text-gray-700 hover:bg-blue-700 hover:text-white">
+                    generate podium
+                </a>
+                </div>
+                <div class="flex items-center mb-4 " *ngFor="let podium of podiumDataResponse">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="w-6 h-6 mr-4 text-gray-500 dark:text-gray-400 bi bi-gift" viewBox="0 0 16 16">
+                        <path
+                            d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z">
+                        </path>
+                    </svg>
+                    <div>
+                        <p class="font-semibold dark:text-gray-400">
+                            {{podium.memberResponseDto.firstName}} {{podium.memberResponseDto.lastName}}
+                        </p>
+                        <p class="text-sm text-gray-400 dark:text-gray-400"> Rank: {{podium.rank}} | Score: {{podium.score}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add_hunting" tabindex="-1" aria-hidden="true"
+            class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative p-4 w-full max-w-2xl max-h-full">
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                            Add hunting for member with name : {{firstName}} {{lastName}}
+                        </h3>
+                        <button type="button"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="add_hunting">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <ng-container *ngIf="huntingFishControl">
+                        <form class="" [formGroup]="huntingFishControl">
+                            <div class="p-4 md:p-5 space-y-4">
+                                <label for="countries"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a member
+                                </label>
+                                <select formControlName="member_num" id="countries"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
+                                        <option value={{rank.memberResponseDto.number}}>
+                                            {{rank.memberResponseDto.firstName}} {{rank.memberResponseDto.lastName}}
+                                        </option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="p-4 md:p-5 space-y-4">
+                                <label for="countries"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
+                                    competition </label>
+                                <select formControlName="competition_code" id="countries"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
+                                        <option value={{rank.competitionResponseDto.code}}>
+                                            {{rank.competitionResponseDto.code}}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="p-4 md:p-5 space-y-4">
+                                <label for="countries"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an fish
+                                </label>
+                                <select formControlName="fish_id" id="countries"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <ng-container *ngFor="let fish of fishList ">
+                                        <option value={{fish?.id}}>{{fish?.name}}</option>
+                                    </ng-container>
+                                </select>
+                            </div>
+                            <div class="p-4 md:p-5 space-y-4">
+                                <label for="number-input"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">average
+                                    weight:</label>
+                                <input type="number" formControlName="average_weight" id="number-input"
+                                    aria-describedby="helper-text-explanation"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="90210" required>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div
+                                class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                                <button data-modal-hide="add_hunting" type="button" (click)="saveHunting()"
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">add</button>
+                                <button data-modal-hide="add_hunting" type="button"
+                                    class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 ml-4">Decline</button>
+                            </div>
+                        </form>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+
+
+<div id="calcul_rank" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Calcul rank
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="calcul_rank">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <ng-container *ngIf="calculRankControl">
+                    <form class="" [formGroup]="calculRankControl">
+                        <div class="p-4 md:p-5 space-y-4">
+                            <label for="countries"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
+                                competition </label>
+                            <select formControlName="competition_code" id="countries"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
+                                    <option value={{rank.competitionResponseDto.code}}>
+                                        {{rank.competitionResponseDto.code}}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <!-- Modal footer -->
+                        <div
+                            class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <button data-modal-hide="calcul_rank" type="button" (click)="calculRank()"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">calcul rank</button>
+                            <button data-modal-hide="calcul_rank" type="button"
+                                class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 ml-4">Decline</button>
+                        </div>
+                    </form>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div id="calculPodium" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                        Calcul Podium
+                    </h3>
+                    <button type="button"
+                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="calculPodium">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+              
+                <ng-container *ngIf="calculRankPodiumControl">
+                    <form class="" [formGroup]="calculRankPodiumControl">
+                        <div class="p-4 md:p-5 space-y-4">
+                            <label for="countries"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
+                                competition </label>
+                            <select formControlName="competition_code" id="countries"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
+                                    <option value={{rank.competitionResponseDto.code}}>
+                                        {{rank.competitionResponseDto.code}}</option>
+                                </ng-container>
+                            </select>
+                        </div>
+                        <!-- Modal footer -->
+                        <div
+                            class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                            <button data-modal-hide="calculPodium" type="button" (click)="generatePodium()"
+                                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">calcul rank</button>
+                            <button data-modal-hide="calculPodium" type="button"
+                                class="ms-3 text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 ml-4">Decline</button>
+                        </div>
+                    </form>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    
+    </section>
+</div>

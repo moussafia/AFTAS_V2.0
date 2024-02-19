@@ -1,0 +1,13 @@
+<div class="bg-white p-3 rounded-xl shadow-md">
+  <div class="flex justify-between items-center">
+        <p for="status" class="font-bold text-lg text-stone-600">Status</p>
+        {{filtreCompetition}}
+        <select
+          id="status" [(ngModel)]="filtreCompetition"
+          class="mt-2 block rounded-md border-gray-300 shadow-sm focus:border-orange-300 focus:ring focus:ring-orange-200 focus:ring-opacity-50"
+        >
+          <option value="{{stateCompetition.PENDING}}">Pending</option>
+          <option value="{{stateCompetition.CLOSED}}">Closed</option>
+        </select>
+      </div>
+</div>
