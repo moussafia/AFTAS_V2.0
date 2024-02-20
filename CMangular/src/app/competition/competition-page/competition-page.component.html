@@ -1,2 +1,166 @@
-<h3 class="i-name">Competition</h3>
+<h3 class="i-name">Competition: {{competionDetails?.code}}</h3>
 
+
+<section class="px-6 pt-6">
+    <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                    fill="currentColor"
+                    class="text-blue-600 dark:text-gray-400 bi bi-calendar-check"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                    </path>
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                    </path>
+                </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">Date</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    {{competionDetails?.date}}</h2>
+            </div>
+        </div>
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                    fill="currentColor"
+                    class="text-blue-600 dark:text-gray-400 bi bi-calendar-check"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                    </path>
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                    </path>
+                </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">Start time</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    {{competionDetails?.startDate}}</h2>
+            </div>
+        </div>
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                    fill="currentColor"
+                    class="text-blue-600 dark:text-gray-400 bi bi-calendar-check"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z">
+                    </path>
+                    <path
+                        d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z">
+                    </path>
+                </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">End time</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    {{competionDetails?.endTime}}</h2>
+            </div>
+        </div>
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="w-6 h-6 bi bi-currency-dollar" viewBox="0 0 16 16">
+                        <path
+                            d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">Amount</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    {{competionDetails?.amount}}</h2>
+            </div>
+        </div>
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class=" bi bi-people" viewBox="0 0 16 16">
+                    <path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z">
+                    </path>
+                </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">Earnings Annual</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    $1,25,220</h2>
+            </div>
+        </div>
+        <div class="flex items-center p-4 rounded-md shadow dark:bg-gray-900 bg-gray-50">
+            <div class="mr-4">
+                <span
+                    class="inline-block p-4 mr-2 text-blue-600 bg-blue-100 rounded-full dark:text-gray-400 dark:bg-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="w-6 h-6 bi bi-currency-dollar" viewBox="0 0 16 16">
+                        <path
+                            d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z">
+                        </path>
+                    </svg>
+                </span>
+            </div>
+            <div>
+                <p class="mb-2 text-gray-700 dark:text-gray-400">Location</p>
+                <h2 class="text-2xl font-bold text-gray-700 dark:text-gray-400">
+                    {{competionDetails?.location}}</h2>
+            </div>
+        </div>
+ 
+    </div>
+</section>
+<section class="px-6 py-6">
+    <div class="grid lg:grid-cols-[60%,1fr]  grid-cols-1 gap-6 ">
+        <div class="pt-4 bg-white rounded shadow dark:text-gray-100 dark:bg-gray-900">
+            <div class="flex px-6 pb-4 border-b dark:border-gray-700">
+                <h2 class="text-xl font-bold dark:text-gray-400">Registered Member</h2>
+            </div>
+            <div class="p-4 overflow-x-auto">
+                <table class="w-full table-auto">
+                    <thead>
+                        <tr class="text-xs text-left text-gray-500 dark:text-gray-400">
+                            <th class="px-6 pb-3 font-medium">name</th>
+                            <th class="px-6 pb-3 font-medium ">number </th>
+                            <th class="px-6 pb-3 font-medium">identity document type </th>
+                            <th class="px-6 pb-3 font-medium">identity number </th>
+                            <th class="px-6 pb-3 font-medium">date accession </th>
+                            <th class="px-6 pb-3 font-medium">rank</th>
+                            <th class="px-6 pb-3 font-medium">score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-xs bg-gray-100 dark:text-gray-400 dark:bg-transparent" *ngFor="let competition of competionDetails?.rankingList">
+                            <td class="px-6 py-5 font-medium">{{competition.memberResponseDto.firstName}} {{competition.memberResponseDto.lastName}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.memberResponseDto.number}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.memberResponseDto.identityDocumentType}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.memberResponseDto.identityNumber}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.memberResponseDto.dateAccession}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.rank}}</td>
+                            <td class="px-6 py-5 font-medium ">{{competition.score}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

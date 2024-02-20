@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CompetitionList, CompetitionListWithRank } from '../../model/competition/competition-list';
 import { CompetitionPost } from '../../model/competition/competition-post';
+import { CompetitionDetails } from '../../model/competition/competition-details';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,7 @@ export class CompetitionServiceService {
       observe: 'response'
     });
 }
-
+getCompetitionByCode(code:string):Observable<CompetitionDetails>{
+  return this.http.get<CompetitionListWithRank>(`${this.host}competition/competition/${code}`);
+}
 }

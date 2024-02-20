@@ -4,9 +4,13 @@
 </div>
 <ng-container *ngIf="competitionList as result" [ngSwitch]="result.dataState">
     <ng-container *ngSwitchCase="dataState.LOADED">
-        <div class="card grid grid-cols-3 gap-4">
-                <app-card [competitionList]="competition"
-                *ngFor="let competition of result.data"></app-card>
+        <div class="card grid grid-cols-3 gap-4" >
+            <div *ngFor="let competition of result.data">
+                <a [routerLink]="['/competition', competition.code]" >
+                  <app-card [competitionList]="competition"></app-card>
+                </a>
+              </div>
+               
         </div>
     </ng-container>
     <ng-container *ngSwitchCase="dataState.LOADING">

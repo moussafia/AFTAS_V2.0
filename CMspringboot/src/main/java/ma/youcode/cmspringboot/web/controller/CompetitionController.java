@@ -33,7 +33,7 @@ public class CompetitionController {
     @GetMapping
     public ResponseEntity<List<CompetitionResponseDto>> getAllCompetition(@RequestParam(defaultValue = "0")
                                                                           @Valid @Min(0) Integer page,
-                                                                          @RequestParam(defaultValue = "1") @Min(1) Integer size,
+                                                                          @RequestParam(defaultValue = "6") @Min(1) Integer size,
                                                                           @RequestParam(defaultValue = "asc") @Pattern(regexp = "asc|desc" ,message = "invalid direction") String directionSort,
                                                                           @RequestParam(defaultValue = "date") String properties){
         Sort.Direction direction = Sort.Direction.fromString(directionSort);

@@ -10,6 +10,7 @@ import { CreateCompetitionComponent } from './create-competition/create-competit
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SuccesComponent } from './create-competition/alert/succes/succes.component';
 import { ErrorComponent } from './create-competition/alert/error/error.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -29,7 +30,8 @@ import { ErrorComponent } from './create-competition/alert/error/error.component
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   
   ],
   exports: [

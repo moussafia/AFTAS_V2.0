@@ -102,6 +102,7 @@ this.rankService.get(this.calculRankControl?.value.competition_code).subscribe({
 }
 generatePodium(){
 if(this.calculRankPodiumControl?.invalid) return;
+console.log("podium "+ this.calculRankPodiumControl?.value);
 this.rankService.getPodium(this.calculRankPodiumControl?.value.competition_code).subscribe({
   next:data=>{
     this.podiumDataResponse = data.body || undefined;

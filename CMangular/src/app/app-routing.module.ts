@@ -5,6 +5,7 @@ import { CreateCompetitionComponent } from './competition/create-competition/cre
 import { MemberListComponent } from './member/member-list/member-list.component';
 import { CreateMemberComponent } from './member/create-member/create-member.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CompetitionPageComponent } from './competition/competition-page/competition-page.component';
 
 const routes: Routes = [
   {path:"competitions", component: CompetitionListComponent},
@@ -12,7 +13,9 @@ const routes: Routes = [
   {path:"createMember", component: CreateMemberComponent},
   {path:"allMember", component: MemberListComponent},
   {path:"dashboard", component: DashboardComponent},
+  {path:"competition/:code", component: CompetitionPageComponent},
   {path:"", redirectTo:"/dashboard", pathMatch:"full"},
+
 
 
 ];

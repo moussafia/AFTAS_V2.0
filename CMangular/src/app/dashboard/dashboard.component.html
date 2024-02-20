@@ -181,10 +181,8 @@
                                     competition </label>
                                 <select formControlName="competition_code" id="countries"
                                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
-                                        <option value={{rank.competitionResponseDto.code}}>
-                                            {{rank.competitionResponseDto.code}}</option>
-                                    </ng-container>
+                                    <option [value]="competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''">
+                                        {{competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''}}</option>
                                 </select>
                             </div>
                             <div class="p-4 md:p-5 space-y-4">
@@ -250,10 +248,8 @@
                                 competition </label>
                             <select formControlName="competition_code" id="countries"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
-                                    <option value={{rank.competitionResponseDto.code}}>
-                                        {{rank.competitionResponseDto.code}}</option>
-                                </ng-container>
+                                <option [value]="competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''">
+                                    {{competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''}}</option>
                             </select>
                         </div>
                         <!-- Modal footer -->
@@ -295,13 +291,11 @@
                             <label for="countries"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an
                                 competition </label>
-                            <select formControlName="competition_code" id="countries"
+                                <select formControlName="competition_code" id="countries"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <ng-container *ngFor="let rank of competitionData?.data?.rankingList">
-                                    <option value={{rank.competitionResponseDto.code}}>
-                                        {{rank.competitionResponseDto.code}}</option>
-                                </ng-container>
-                            </select>
+                                    <option [value]="competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''">
+                                        {{competitionData?.data?.rankingList?.[0]?.competitionResponseDto?.code ?? ''}}</option>
+                        </select>
                         </div>
                         <!-- Modal footer -->
                         <div
