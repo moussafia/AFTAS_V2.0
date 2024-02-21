@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.model.dto.rankingDto;
 
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Ranking;
 import ma.youcode.cmspringboot.model.dto.competitionDto.competitonResponseDto.CompetitionResponseDto;
 import ma.youcode.cmspringboot.model.dto.memberDto.MemberResponseDto;
 

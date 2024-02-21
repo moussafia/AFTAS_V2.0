@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
+import ma.youcode.cmspringboot.model.entity.Competition;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.seeder.CompetitionSeeder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 @Component
 public class CompetitionSeederImpl implements CompetitionSeeder {

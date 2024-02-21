@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
+import ma.youcode.cmspringboot.model.entity.Competition;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.service.aftas.CompetitionService;
 import org.springframework.data.domain.Page;

@@ -1,11 +1,10 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
-import ma.youcode.cmspringboot.model.domain.Member;
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.model.entity.Ranking;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface RankingService {
     public Ranking InscribeMemberToCompetition(Integer num_member, String competition_code);

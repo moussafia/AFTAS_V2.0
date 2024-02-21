@@ -1,29 +1,35 @@
-package ma.youcode.cmspringboot.model.domain;
+package ma.youcode.cmspringboot.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 
 import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
-@Getter @Setter
+@Getter
+@Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Member {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer num;
-    private String name;
-    private String familyName;
-    private LocalDate accessionDate;
+
+
     private String nationality;
+    private String username;
+    private LocalDate accessionDate;
     @Enumerated(EnumType.STRING)
     private IdentityDocumentType identityDocumentType;
-    @Column(name = "identity_number",unique = true)
+    @Column(name = "identity_number", unique = true)
     private String identityNumber;
     @OneToMany(mappedBy = "member")
     @JsonBackReference
@@ -31,4 +37,5 @@ public class Member {
     @OneToMany(mappedBy = "member")
     @JsonBackReference
     private Set<Hunting> huntings;
+
 }

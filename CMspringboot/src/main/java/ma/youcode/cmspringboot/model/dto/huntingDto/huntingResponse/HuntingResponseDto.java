@@ -1,7 +1,7 @@
 package ma.youcode.cmspringboot.model.dto.huntingDto.huntingResponse;
 
-import ma.youcode.cmspringboot.model.domain.Fish;
-import ma.youcode.cmspringboot.model.domain.Hunting;
+import ma.youcode.cmspringboot.model.entity.Fish;
+import ma.youcode.cmspringboot.model.entity.Hunting;
 import ma.youcode.cmspringboot.model.dto.competitionDto.competitonResponseDto.CompetitionResponseDto;
 import ma.youcode.cmspringboot.model.dto.memberDto.MemberResponseDto;
 

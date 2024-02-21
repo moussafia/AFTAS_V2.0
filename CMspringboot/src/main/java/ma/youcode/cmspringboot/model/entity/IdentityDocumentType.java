@@ -1,4 +1,4 @@
-package ma.youcode.cmspringboot.model.domain;
+package ma.youcode.cmspringboot.model.entity;
 
 
 public enum IdentityDocumentType {

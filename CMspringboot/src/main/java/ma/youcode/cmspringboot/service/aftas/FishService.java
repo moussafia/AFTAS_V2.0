@@ -1,11 +1,8 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.domain.Fish;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import ma.youcode.cmspringboot.model.entity.Fish;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface FishService {
     Fish createFish(Fish fish);

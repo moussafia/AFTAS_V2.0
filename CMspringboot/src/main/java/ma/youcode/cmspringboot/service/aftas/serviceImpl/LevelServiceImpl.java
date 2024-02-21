@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.domain.Level;
+import ma.youcode.cmspringboot.model.entity.Level;
 import ma.youcode.cmspringboot.repository.LevelRepository;
 import ma.youcode.cmspringboot.service.aftas.LevelService;
 import org.springframework.stereotype.Service;

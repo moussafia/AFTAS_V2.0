@@ -1,6 +1,6 @@
-package ma.youcode.cmspringboot.web.controller;
+package ma.youcode.cmspringboot.controller;
 
-import ma.youcode.cmspringboot.model.domain.Member;
+import ma.youcode.cmspringboot.model.entity.Member;
 import ma.youcode.cmspringboot.model.dto.memberDto.MemberResponseDto;
 import ma.youcode.cmspringboot.model.dto.memberDto.memberRequestDto.MemberSaveDto;
 import ma.youcode.cmspringboot.service.aftas.MemberService;

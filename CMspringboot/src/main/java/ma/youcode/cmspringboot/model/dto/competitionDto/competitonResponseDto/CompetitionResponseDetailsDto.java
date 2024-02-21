@@ -1,7 +1,6 @@
 package ma.youcode.cmspringboot.model.dto.competitionDto.competitonResponseDto;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Competition;
 import ma.youcode.cmspringboot.model.dto.rankingDto.RankingResponseDto;
 
 import java.time.LocalDate;

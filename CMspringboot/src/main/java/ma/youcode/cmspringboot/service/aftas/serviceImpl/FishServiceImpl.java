@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.domain.Fish;
+import ma.youcode.cmspringboot.model.entity.Fish;
 import ma.youcode.cmspringboot.repository.FishRepository;
 import ma.youcode.cmspringboot.service.aftas.FishService;
 import org.springframework.stereotype.Service;

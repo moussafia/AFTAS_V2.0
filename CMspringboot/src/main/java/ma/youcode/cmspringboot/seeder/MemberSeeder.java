@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.seeder;
 
-import ma.youcode.cmspringboot.model.domain.Member;
+import ma.youcode.cmspringboot.model.entity.Member;
 
 import java.util.List;
 

@@ -1,8 +1,7 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.domain.Level;
+import ma.youcode.cmspringboot.model.entity.Level;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;

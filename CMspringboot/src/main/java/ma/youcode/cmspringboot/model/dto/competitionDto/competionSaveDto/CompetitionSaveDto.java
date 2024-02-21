@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.model.dto.competitionDto.competionSaveDto;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
+import ma.youcode.cmspringboot.model.entity.Competition;
 
 import javax.validation.Valid;
 import javax.validation.constraints.*;

@@ -1,7 +1,7 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.domain.IdentityDocumentType;
-import ma.youcode.cmspringboot.model.domain.Member;
+import ma.youcode.cmspringboot.model.entity.IdentityDocumentType;
+import ma.youcode.cmspringboot.model.entity.Member;
 import ma.youcode.cmspringboot.repository.MemberRepository;
 import ma.youcode.cmspringboot.seeder.MemberSeeder;
 import org.springframework.stereotype.Component;

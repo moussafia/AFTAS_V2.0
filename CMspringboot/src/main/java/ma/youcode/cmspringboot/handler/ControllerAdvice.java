@@ -1,4 +1,4 @@
-package ma.youcode.cmspringboot.web.controllerAdvice;
+package ma.youcode.cmspringboot.handler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

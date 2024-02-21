@@ -1,8 +1,8 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
-import ma.youcode.cmspringboot.model.domain.Member;
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.model.entity.Ranking;
 import ma.youcode.cmspringboot.repository.RankingRepository;
 import ma.youcode.cmspringboot.seeder.RankingSeeder;
 import org.springframework.stereotype.Component;

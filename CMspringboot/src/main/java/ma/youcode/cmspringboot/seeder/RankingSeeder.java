@@ -1,8 +1,8 @@
 package ma.youcode.cmspringboot.seeder;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
-import ma.youcode.cmspringboot.model.domain.Member;
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.model.entity.Ranking;
 
 import java.util.List;
 

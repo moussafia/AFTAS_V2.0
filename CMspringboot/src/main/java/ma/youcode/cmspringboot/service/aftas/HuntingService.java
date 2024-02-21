@@ -1,9 +1,8 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.domain.*;
+import ma.youcode.cmspringboot.model.entity.*;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface HuntingService {
     Hunting insertHuntingForMemberInCompetition(Long fish_id, Integer average_weight,

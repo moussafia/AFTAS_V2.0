@@ -1,4 +1,4 @@
-package ma.youcode.cmspringboot.web.controller;
+package ma.youcode.cmspringboot.controller;
 
 import ma.youcode.cmspringboot.model.dto.fishDto.fishResponseDto.FishResponseDto;
 import ma.youcode.cmspringboot.service.aftas.FishService;

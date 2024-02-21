@@ -1,12 +1,11 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.domain.Level;
+import ma.youcode.cmspringboot.model.entity.Level;
 import ma.youcode.cmspringboot.repository.LevelRepository;
 import ma.youcode.cmspringboot.seeder.LevelSeeder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Component

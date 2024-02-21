@@ -1,6 +1,6 @@
-package ma.youcode.cmspringboot.web.controller;
+package ma.youcode.cmspringboot.controller;
 
-import ma.youcode.cmspringboot.model.domain.Ranking;
+import ma.youcode.cmspringboot.model.entity.Ranking;
 import ma.youcode.cmspringboot.model.dto.rankingDto.RankingResponseDto;
 import ma.youcode.cmspringboot.model.dto.rankingDto.rankingRequestDto.RankingSaveDto;
 import ma.youcode.cmspringboot.service.aftas.RankingService;

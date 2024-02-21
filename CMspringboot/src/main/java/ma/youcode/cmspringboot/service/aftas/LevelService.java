@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.domain.Level;
+import ma.youcode.cmspringboot.model.entity.Level;
 
 import java.util.List;
 import java.util.Optional;

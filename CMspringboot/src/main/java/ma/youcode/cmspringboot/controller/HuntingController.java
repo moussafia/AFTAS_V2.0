@@ -1,6 +1,6 @@
-package ma.youcode.cmspringboot.web.controller;
+package ma.youcode.cmspringboot.controller;
 
-import ma.youcode.cmspringboot.model.domain.Hunting;
+import ma.youcode.cmspringboot.model.entity.Hunting;
 import ma.youcode.cmspringboot.model.dto.huntingDto.huntingRequestDto.HuntingInsertDto;
 import ma.youcode.cmspringboot.model.dto.huntingDto.huntingResponse.HuntingResponseDto;
 import ma.youcode.cmspringboot.service.aftas.HuntingService;

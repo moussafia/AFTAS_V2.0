@@ -1,6 +1,6 @@
-package ma.youcode.cmspringboot.web.controller;
+package ma.youcode.cmspringboot.controller;
 
-import ma.youcode.cmspringboot.model.domain.Competition;
+import ma.youcode.cmspringboot.model.entity.Competition;
 import ma.youcode.cmspringboot.model.dto.competitionDto.competionSaveDto.CompetitionSaveDto;
 import ma.youcode.cmspringboot.model.dto.competitionDto.competitonResponseDto.CompetitionResponseDetailsDto;
 import ma.youcode.cmspringboot.model.dto.competitionDto.competitonResponseDto.CompetitionResponseDto;

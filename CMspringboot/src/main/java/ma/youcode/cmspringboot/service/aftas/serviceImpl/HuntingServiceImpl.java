@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.domain.*;
+import ma.youcode.cmspringboot.model.entity.*;
 import ma.youcode.cmspringboot.repository.HuntingRepository;
 import ma.youcode.cmspringboot.service.aftas.*;
 import org.springframework.stereotype.Service;

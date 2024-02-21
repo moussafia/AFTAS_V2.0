@@ -1,8 +1,7 @@
 package ma.youcode.cmspringboot.model.dto.memberDto;
 
-import ma.youcode.cmspringboot.model.domain.IdentityDocumentType;
-import ma.youcode.cmspringboot.model.domain.Member;
-import ma.youcode.cmspringboot.model.dto.memberDto.memberRequestDto.MemberSaveDto;
+import ma.youcode.cmspringboot.model.entity.IdentityDocumentType;
+import ma.youcode.cmspringboot.model.entity.Member;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

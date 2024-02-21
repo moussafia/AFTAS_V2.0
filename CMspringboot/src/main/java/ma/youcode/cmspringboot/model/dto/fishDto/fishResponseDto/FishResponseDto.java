@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.model.dto.fishDto.fishResponseDto;
 
-import ma.youcode.cmspringboot.model.domain.Fish;
+import ma.youcode.cmspringboot.model.entity.Fish;
 
 public record FishResponseDto(
         Long id,

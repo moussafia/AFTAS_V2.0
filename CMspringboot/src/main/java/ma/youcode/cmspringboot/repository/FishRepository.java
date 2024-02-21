@@ -1,7 +1,6 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.domain.Fish;
-import org.springframework.data.domain.Page;
+import ma.youcode.cmspringboot.model.entity.Fish;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
