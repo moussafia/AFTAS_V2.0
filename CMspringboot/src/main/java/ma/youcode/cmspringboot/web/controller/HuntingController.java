@@ -3,7 +3,7 @@ package ma.youcode.cmspringboot.web.controller;
 import ma.youcode.cmspringboot.model.domain.Hunting;
 import ma.youcode.cmspringboot.model.dto.huntingDto.huntingRequestDto.HuntingInsertDto;
 import ma.youcode.cmspringboot.model.dto.huntingDto.huntingResponse.HuntingResponseDto;
-import ma.youcode.cmspringboot.service.HuntingService;
+import ma.youcode.cmspringboot.service.aftas.HuntingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

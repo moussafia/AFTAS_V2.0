@@ -1,8 +1,8 @@
-package ma.youcode.cmspringboot.service.serviceImpl;
+package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
 import ma.youcode.cmspringboot.model.domain.*;
 import ma.youcode.cmspringboot.repository.HuntingRepository;
-import ma.youcode.cmspringboot.service.*;
+import ma.youcode.cmspringboot.service.aftas.*;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;

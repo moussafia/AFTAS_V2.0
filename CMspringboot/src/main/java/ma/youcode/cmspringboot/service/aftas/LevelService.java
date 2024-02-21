@@ -1,4 +1,4 @@
-package ma.youcode.cmspringboot.service;
+package ma.youcode.cmspringboot.service.aftas;
 
 import ma.youcode.cmspringboot.model.domain.Level;
 

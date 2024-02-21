@@ -1,10 +1,8 @@
-package ma.youcode.cmspringboot.service.serviceImpl;
+package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
 import ma.youcode.cmspringboot.model.domain.Fish;
 import ma.youcode.cmspringboot.repository.FishRepository;
-import ma.youcode.cmspringboot.service.FishService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import ma.youcode.cmspringboot.service.aftas.FishService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

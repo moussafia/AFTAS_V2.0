@@ -1,8 +1,8 @@
-package ma.youcode.cmspringboot.service.serviceImpl;
+package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
 import ma.youcode.cmspringboot.model.domain.Competition;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
-import ma.youcode.cmspringboot.service.CompetitionService;
+import ma.youcode.cmspringboot.service.aftas.CompetitionService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @Service
 @Transactional

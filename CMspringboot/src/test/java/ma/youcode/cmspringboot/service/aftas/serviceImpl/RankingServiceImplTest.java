@@ -1,18 +1,15 @@
-package ma.youcode.cmspringboot.service.serviceImpl;
+package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import liquibase.pro.packaged.M;
 import ma.youcode.cmspringboot.model.domain.Competition;
 import ma.youcode.cmspringboot.model.domain.IdentityDocumentType;
 import ma.youcode.cmspringboot.model.domain.Member;
 import ma.youcode.cmspringboot.model.domain.Ranking;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.repository.RankingRepository;
-import ma.youcode.cmspringboot.service.CompetitionService;
-import ma.youcode.cmspringboot.service.MemberService;
-import ma.youcode.cmspringboot.service.RankingService;
+import ma.youcode.cmspringboot.service.aftas.CompetitionService;
+import ma.youcode.cmspringboot.service.aftas.MemberService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 

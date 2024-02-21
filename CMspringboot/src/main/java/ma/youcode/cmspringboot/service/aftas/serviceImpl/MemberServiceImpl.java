@@ -1,8 +1,8 @@
-package ma.youcode.cmspringboot.service.serviceImpl;
+package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
 import ma.youcode.cmspringboot.model.domain.Member;
 import ma.youcode.cmspringboot.repository.MemberRepository;
-import ma.youcode.cmspringboot.service.MemberService;
+import ma.youcode.cmspringboot.service.aftas.MemberService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

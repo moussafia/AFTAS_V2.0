@@ -3,7 +3,7 @@ package ma.youcode.cmspringboot.web.controller;
 import ma.youcode.cmspringboot.model.domain.Ranking;
 import ma.youcode.cmspringboot.model.dto.rankingDto.RankingResponseDto;
 import ma.youcode.cmspringboot.model.dto.rankingDto.rankingRequestDto.RankingSaveDto;
-import ma.youcode.cmspringboot.service.RankingService;
+import ma.youcode.cmspringboot.service.aftas.RankingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -3,7 +3,7 @@ package ma.youcode.cmspringboot.web.controller;
 import ma.youcode.cmspringboot.model.domain.Member;
 import ma.youcode.cmspringboot.model.dto.memberDto.MemberResponseDto;
 import ma.youcode.cmspringboot.model.dto.memberDto.memberRequestDto.MemberSaveDto;
-import ma.youcode.cmspringboot.service.MemberService;
+import ma.youcode.cmspringboot.service.aftas.MemberService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
