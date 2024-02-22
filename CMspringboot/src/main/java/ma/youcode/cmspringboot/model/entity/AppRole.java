@@ -13,7 +13,7 @@ import java.util.List;
 public class AppRole {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private AppRoleEnum name;
     @ManyToMany
     private List<AppUser> members;
 }
