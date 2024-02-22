@@ -20,12 +20,9 @@ import java.util.stream.Collectors;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Member {
-
-
+@PrimaryKeyJoinColumn(name = "user_id")
+public class Member extends AppUser {
     private String nationality;
-    private String username;
     private LocalDate accessionDate;
     @Enumerated(EnumType.STRING)
     private IdentityDocumentType identityDocumentType;

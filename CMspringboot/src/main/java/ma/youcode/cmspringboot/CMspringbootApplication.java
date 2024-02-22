@@ -15,5 +15,4 @@ public class CMspringbootApplication {
 
         SpringApplication.run(CMspringbootApplication.class, args);
     }
-
 }

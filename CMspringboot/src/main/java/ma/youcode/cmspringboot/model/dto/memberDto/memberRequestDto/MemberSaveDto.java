@@ -23,12 +23,13 @@ public record MemberSaveDto(
         String nationality
 ) {
     public static Member toMember(MemberSaveDto memberSaveDto){
-        return  new Member().builder()
-               // .name(memberSaveDto.firstName)
-                //.familyName(memberSaveDto.lastName)
+        Member member = new Member().builder()
                 .identityNumber(memberSaveDto.identityNumber)
                 .identityDocumentType(memberSaveDto.identityDocumentType)
                 .nationality(memberSaveDto.nationality)
                 .build();
+        member.setName(memberSaveDto.firstName);
+        member.setFamilyName(memberSaveDto.lastName);
+        return member;
     }
 }

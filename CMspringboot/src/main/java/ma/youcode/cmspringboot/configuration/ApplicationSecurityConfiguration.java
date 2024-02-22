@@ -14,6 +14,7 @@ import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
@@ -25,31 +26,36 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 public class ApplicationSecurityConfiguration {
     private RsaKeyConfig rsaKeyConfig;
     private PasswordEncoder passwordEncoder;
-
     public ApplicationSecurityConfiguration(RsaKeyConfig rsaKeyConfig, PasswordEncoder passwordEncoder) {
         this.rsaKeyConfig = rsaKeyConfig;
         this.passwordEncoder = passwordEncoder;
     }
+
     @Bean
     public AuthenticationProvider authenticationProvider(UserDetailsService userDetailsService){
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder);
-        return daoAuthenticationProvider;
+        var authProvider = new DaoAuthenticationProvider();
+        authProvider.setPasswordEncoder(passwordEncoder);
+        authProvider.setUserDetailsService(userDetailsService);
+        return authProvider;
     }
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationProvider authenticationProvider){
-        return new ProviderManager(authenticationProvider);
+    public AuthenticationManager authenticationManager(AuthenticationProvider authProvider){
+        return new ProviderManager(authProvider);
+    }
+
+    @Bean
+    JwtDecoder jwtDecoder(){
+        return NimbusJwtDecoder.withPublicKey(rsaKeyConfig.publicKey()).build();
     }
     @Bean
-    public JwtDecoder jwtDecoder(){
-        return NimbusJwtDecoder.withPublicKey(rsaKeyConfig.rsaPublicKey()).build();
-    }
-    @Bean
-    public JwtEncoder jwtEncoder(){
-        JWK jwk= new RSAKey.Builder(rsaKeyConfig.rsaPublicKey()).privateKey(rsaKeyConfig.rsaPrivateKey()).build();
+    JwtEncoder jwtEncoder(){
+        JWK jwk= new RSAKey.Builder(rsaKeyConfig.publicKey()).privateKey(rsaKeyConfig.privateKey()).build();
         JWKSource<SecurityContext> jwkSource= new ImmutableJWKSet<>(new JWKSet(jwk));
         return new NimbusJwtEncoder(jwkSource);
+    }
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 
 }

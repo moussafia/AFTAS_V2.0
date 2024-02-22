@@ -27,9 +27,11 @@ public record MemberResponseDto(
 ) {
     public static MemberResponseDto toMemberResponseDto(Member member){
         return  new MemberResponseDto(
-                member.getName(), member.getFamilyName(), member.getIdentityDocumentType(),
-                member.getIdentityNumber(), member.getNationality(), member.getNum(), member.getAccessionDate()
-        );
+                member.getName(), member.getFamilyName(),
+                member.getIdentityDocumentType(),
+                member.getIdentityNumber(),
+                member.getNationality(), member.getNum(), member.getAccessionDate()
+                );
 }
 }
 
