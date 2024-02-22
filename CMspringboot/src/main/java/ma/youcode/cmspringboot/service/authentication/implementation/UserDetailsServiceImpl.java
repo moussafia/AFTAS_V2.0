@@ -1,4 +1,4 @@
-package ma.youcode.cmspringboot.service.authentication;
+package ma.youcode.cmspringboot.service.authentication.implementation;
 
 import lombok.RequiredArgsConstructor;
 import ma.youcode.cmspringboot.model.entity.AppUser;

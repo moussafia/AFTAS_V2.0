@@ -15,4 +15,8 @@ public class CMspringbootApplication {
 
         SpringApplication.run(CMspringbootApplication.class, args);
     }
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 }
