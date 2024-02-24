@@ -44,11 +44,12 @@ public record MemberUpdateDto(
         member.setNum(memberUpdateDto.num);
         member.setName(memberUpdateDto.firstName);
         member.setFamilyName(memberUpdateDto.lastName);
+        member.setUsername(memberUpdateDto.username);
         Set<AppRole> roles = memberUpdateDto.roles.stream()
-                .map(r-> new AppRole(null, AppRoleEnum.valueOf(r), null))
+                .map(r-> new AppRole(null, AppRoleEnum.valueOf(r)))
                 .collect(Collectors.toSet());
         member.setRoles(roles);
-        member.setIsAccountNonLocked(memberUpdateDto.isAccountNonLocked);
+        member.setAccountNonLocked(memberUpdateDto.isAccountNonLocked);
         return member;
     }
 }

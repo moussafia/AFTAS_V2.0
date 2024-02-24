@@ -16,6 +16,4 @@ public class AppRole {
     private Long id;
     @Enumerated(EnumType.STRING)
     private AppRoleEnum name;
-    @ManyToMany
-    private Set<AppUser> members;
 }

@@ -1,6 +1,10 @@
 package ma.youcode.cmspringboot.service.authentication.implementation;
 import lombok.RequiredArgsConstructor;
+import ma.youcode.cmspringboot.entity.AppRole;
+import ma.youcode.cmspringboot.entity.AppRoleEnum;
+import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.security.util.SecurityUtil;
+import ma.youcode.cmspringboot.service.aftas.RoleService;
 import ma.youcode.cmspringboot.web.dto.authDto.AuthenticationRequestDto;
 import ma.youcode.cmspringboot.web.dto.authDto.AuthenticationResponseDto;
 import ma.youcode.cmspringboot.web.dto.authDto.RegisterRequestDto;
@@ -16,9 +20,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import javax.naming.NameNotFoundException;
 import javax.validation.ValidationException;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
@@ -27,7 +34,7 @@ public class AuthServiceImpl implements AuthService {
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final RefreshTokenService refreshTokenService;
-    private final RoleRepository roleRepository;
+    private final RoleService roleService;
 
 
     @Override
@@ -39,13 +46,15 @@ public class AuthServiceImpl implements AuthService {
         return generateAccessToken(authentication, user);
     }
     @Override
-    public void signUp(RegisterRequestDto registerRequestDto){
+    public void signUp(RegisterRequestDto registerRequestDto) throws NameNotFoundException {
         validateUserIfExistForSignUp(registerRequestDto.username());
         String passwordEncrypted = passwordEncoder.encode(registerRequestDto.password());
-        AppUser user = RegisterRequestDto.toMember(registerRequestDto);
-        user.setPassword(passwordEncrypted);
-        user.setAccountNonLocked(false);
-        var userSaved = userRepository.save(user);
+        Member member = RegisterRequestDto.toMember(registerRequestDto);
+        member.setPassword(passwordEncrypted);
+        member.setAccountNonLocked(false);
+        AppRole role = roleService.findRoleByName(AppRoleEnum.MEMBER.name());
+        member.setRoles(Set.of(role));
+        userRepository.save(member);
     }
     @Override
     public AppUser findByUsername(String username) {

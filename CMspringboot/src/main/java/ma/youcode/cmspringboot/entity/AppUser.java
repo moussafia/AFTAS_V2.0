@@ -1,5 +1,6 @@
 package ma.youcode.cmspringboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,7 +29,7 @@ public class AppUser implements UserDetails {
     private String name;
     private String familyName;
     private String password;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<AppRole> roles;
     @ColumnDefault("false")
     private boolean isAccountNonLocked;
@@ -68,7 +69,5 @@ public class AppUser implements UserDetails {
         return true;
     }
 
-    public void setIsAccountNonLocked(boolean isAccountNonLocked) {
-        this.isAccountNonLocked = isAccountNonLocked;
-    }
+
 }

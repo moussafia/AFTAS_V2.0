@@ -1,17 +1,21 @@
 package ma.youcode.cmspringboot.security.util;
 
-import com.nimbusds.jose.proc.SecurityContext;
+import lombok.RequiredArgsConstructor;
 import ma.youcode.cmspringboot.security.AuthoritiesConstants;
+import ma.youcode.cmspringboot.service.authentication.AppUserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
 @Component
 public final class SecurityUtil {
-    private SecurityUtil() {
+    private static AppUserService appUserService;
+    private SecurityUtil(AppUserService appUserService) {
+        this.appUserService = appUserService;
     }
 
     /**
@@ -38,10 +42,10 @@ public final class SecurityUtil {
     private static UserDetails extractPrincipal(Authentication authentication) {
         if (authentication == null) {
             return null;
-        } else if (authentication.getPrincipal() instanceof UserDetails springSecurityUser) {
-            return springSecurityUser;
+        } else {
+            Jwt jwt = (Jwt) authentication.getPrincipal();
+            return appUserService.userDetailsService().loadUserByUsername(jwt.getClaim("sub"));
         }
-        return null;
     }
 
     /**

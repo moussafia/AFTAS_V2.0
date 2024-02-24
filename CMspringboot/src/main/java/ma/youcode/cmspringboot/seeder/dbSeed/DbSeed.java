@@ -25,6 +25,7 @@ public class DbSeed {
     @Bean
     public CommandLineRunner start(){
         return args -> {
+            roleSeeder.createRoles();
             List<Level> levelList = levelSeeder.saveLevel();
             List<Fish> fishList = fishSeeder.saveFish(levelList);
             List<Competition> competitionList = competitionSeeder.createListCompetition();
@@ -34,7 +35,6 @@ public class DbSeed {
                 rankingList.add(rankingSeeder.createRankingSeeder(members, cl));
             });
          competitionSeeder.createOne();
-         roleSeeder.createRoles();
 
         };
     }

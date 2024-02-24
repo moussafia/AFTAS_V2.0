@@ -22,7 +22,6 @@ public interface CompetitionRepository extends JpaRepository<Competition, Long> 
     @Query("SELECT c from Competition c WHERE c.date > :date " +
             "AND DATEDIFF(c.date, :date) > 1")
     Page<Competition> filterCompetitionPending(LocalDate date, Pageable Pageable);
-    Page<Competition> findCompetitionByMember(Member member);
 
 
 }

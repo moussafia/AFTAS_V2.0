@@ -11,19 +11,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public record MemberResponseDto(
-    @NotBlank @NotNull
     String firstName,
-    @NotBlank @NotNull
-
     String lastName,
-    @NotBlank @NotNull
-
+    String username,
     IdentityDocumentType identityDocumentType,
-    @NotBlank @NotNull
-
     String identityNumber,
-    @NotBlank @NotNull
-
     String nationality,
     Integer number,
     LocalDate dateAccession,
@@ -35,6 +27,7 @@ public record MemberResponseDto(
                 .collect(Collectors.toSet());
         return  new MemberResponseDto(
                 member.getName(), member.getFamilyName(),
+                member.getUsername(),
                 member.getIdentityDocumentType(),
                 member.getIdentityNumber(),
                 member.getNationality(), member.getNum(),

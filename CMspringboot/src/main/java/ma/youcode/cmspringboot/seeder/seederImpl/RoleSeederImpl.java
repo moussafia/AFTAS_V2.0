@@ -7,7 +7,10 @@ import ma.youcode.cmspringboot.repository.RoleRepository;
 import ma.youcode.cmspringboot.seeder.RoleSeeder;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -16,10 +19,15 @@ public class RoleSeederImpl implements RoleSeeder {
     @Override
     public List<AppRole> createRoles() {
         List<AppRole> rolesList = List.of(
-                new AppRole(null, AppRoleEnum.JURY, null),
-                new AppRole(null, AppRoleEnum.MEMBER, null),
-                new AppRole(null, AppRoleEnum.MANAGER, null)
+                new AppRole(null, AppRoleEnum.JURY),
+                new AppRole(null, AppRoleEnum.MEMBER),
+                new AppRole(null, AppRoleEnum.MANAGER)
         );
         return roleRepository.saveAll(rolesList);
+    }
+
+    @Override
+    public Set<AppRole> getRoles(){
+        return new HashSet<>(roleRepository.findAll());
     }
 }

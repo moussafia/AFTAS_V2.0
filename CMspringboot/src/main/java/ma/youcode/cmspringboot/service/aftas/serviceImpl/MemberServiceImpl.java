@@ -1,8 +1,11 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
+import lombok.RequiredArgsConstructor;
 import ma.youcode.cmspringboot.entity.AppRole;
+import ma.youcode.cmspringboot.entity.AppUser;
 import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.repository.MemberRepository;
+import ma.youcode.cmspringboot.repository.UserRepository;
 import ma.youcode.cmspringboot.service.aftas.MemberService;
 import ma.youcode.cmspringboot.service.aftas.RoleService;
 import org.springframework.data.domain.Page;
@@ -16,14 +19,12 @@ import java.util.List;
 import java.util.Set;
 
 @Service
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
-    private MemberRepository memberRepository;
-    private RoleService roleService;
+    private final MemberRepository memberRepository;
+    private final RoleService roleService;
+    private final UserRepository userRepository;
 
-    public MemberServiceImpl(MemberRepository memberRepository) {
-
-        this.memberRepository = memberRepository;
-    }
 
     @Override
     public Member createMember(Member member) {
@@ -33,9 +34,10 @@ public class MemberServiceImpl implements MemberService {
     }
     @Override
     public Member updateMember(Member member) throws NameNotFoundException {
-        ValidateIfExistForUpdate(member);
+        Member memberExisted = ValidateIfExistForUpdate(member);
         Set<AppRole> roleSet = ValidateIfRoleExist(member.getRoles());
         member.setRoles(roleSet);
+        member.setPassword(memberExisted.getPassword());
         return memberRepository.save(member);
     }
 
@@ -76,10 +78,10 @@ public class MemberServiceImpl implements MemberService {
                     throw new IllegalStateException(m.getIdentityNumber() + " is Already exist");
                 });
     }
-    void ValidateIfExistForUpdate(Member member){
-        Member memberExisted = memberRepository.findByNum(member.getNum()).orElse(null);
-        if (memberExisted == null)
-            throw new IllegalStateException("member with number adherent " + member.getNum() + " not exist");
+    Member ValidateIfExistForUpdate(Member member){
+        Integer num = member.getNum();
+        return memberRepository.findByNum(num)
+                .orElseThrow(() -> new IllegalStateException("member with number adherent " + member.getNum() + " not exist"));
     }
 
 }

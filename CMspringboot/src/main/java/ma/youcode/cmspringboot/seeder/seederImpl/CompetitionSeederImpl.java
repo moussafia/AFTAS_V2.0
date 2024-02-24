@@ -1,5 +1,6 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
+import lombok.RequiredArgsConstructor;
 import ma.youcode.cmspringboot.entity.Competition;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.seeder.CompetitionSeeder;
@@ -11,13 +12,10 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 @Component
+@RequiredArgsConstructor
 public class CompetitionSeederImpl implements CompetitionSeeder {
-    private CompetitionRepository competitionRepository;
+    private final CompetitionRepository competitionRepository;
 
-    @Autowired
-    public CompetitionSeederImpl(CompetitionRepository competitionRepository) {
-        this.competitionRepository = competitionRepository;
-    }
 @Override
     public Competition createOne(){
         Competition competition = new Competition().builder().code("hofro03")
