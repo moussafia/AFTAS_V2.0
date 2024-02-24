@@ -1,6 +1,7 @@
 package ma.youcode.cmspringboot.repository;
 
 import ma.youcode.cmspringboot.entity.Competition;
+import ma.youcode.cmspringboot.entity.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -21,6 +22,7 @@ public interface CompetitionRepository extends JpaRepository<Competition, Long> 
     @Query("SELECT c from Competition c WHERE c.date > :date " +
             "AND DATEDIFF(c.date, :date) > 1")
     Page<Competition> filterCompetitionPending(LocalDate date, Pageable Pageable);
+    Page<Competition> findCompetitionByMember(Member member);
 
 
 }

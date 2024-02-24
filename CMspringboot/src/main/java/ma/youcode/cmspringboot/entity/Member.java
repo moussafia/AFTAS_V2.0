@@ -28,5 +28,4 @@ public class Member extends AppUser {
     @OneToMany(mappedBy = "member")
     @JsonBackReference
     private Set<Hunting> huntings;
-
 }

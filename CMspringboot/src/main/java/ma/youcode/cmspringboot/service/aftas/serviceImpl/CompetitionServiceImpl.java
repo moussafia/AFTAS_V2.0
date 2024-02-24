@@ -42,6 +42,12 @@ public class CompetitionServiceImpl implements CompetitionService {
     }
 
     @Override
+    public Page<Competition> getMyCompetitions(Pageable pageable) {
+
+        return null;
+    }
+
+    @Override
     public Competition updateCompetition(Competition competition) {
         validateIfExistForUpdate(competition);
         validateDateCompetition(competition);

@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Entity
@@ -28,7 +29,7 @@ public class AppUser implements UserDetails {
     private String familyName;
     private String password;
     @ManyToMany
-    private List<AppRole> roles;
+    private Set<AppRole> roles;
     @ColumnDefault("false")
     private boolean isAccountNonLocked;
 
@@ -65,5 +66,9 @@ public class AppUser implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public void setIsAccountNonLocked(boolean isAccountNonLocked) {
+        this.isAccountNonLocked = isAccountNonLocked;
     }
 }

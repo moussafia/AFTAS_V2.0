@@ -5,9 +5,12 @@ import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.entity.Ranking;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.repository.RankingRepository;
+import ma.youcode.cmspringboot.security.util.SecurityUtil;
 import ma.youcode.cmspringboot.service.aftas.CompetitionService;
 import ma.youcode.cmspringboot.service.aftas.MemberService;
 import ma.youcode.cmspringboot.service.aftas.RankingService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -105,6 +108,15 @@ public class RankingServiceImpl implements RankingService {
         return rankingRepository.getPodium(competition_code)
                 .orElseThrow(()-> new IllegalStateException("no podium for this competition with code " + competition_code));
     }
+
+    @Override
+    public Page<Competition> getMyCompetition(Pageable pageable) {
+        String username = SecurityUtil.getCurrentUsername();
+        Member member = memberService.getMemberByUsername(username);
+        return rankingRepository.findByMember(member, pageable)
+                .orElseThrow(() -> new RuntimeException("resource not found"));
+    }
+
 
     private Member validateMemberIfExist(Integer member_num) {
 

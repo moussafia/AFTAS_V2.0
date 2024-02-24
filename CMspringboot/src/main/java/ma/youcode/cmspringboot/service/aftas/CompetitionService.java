@@ -11,5 +11,6 @@ public interface CompetitionService {
     public Page<Competition> getAllCompetition(Pageable pageable);
     public Page<Competition> filterCompetitionByDate(boolean isClosed,Pageable pageable);
     public Competition getCompetitionByDate();
+    public Page<Competition> getMyCompetitions(Pageable pageable);
 
 }

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Builder
@@ -16,5 +17,5 @@ public class AppRole {
     @Enumerated(EnumType.STRING)
     private AppRoleEnum name;
     @ManyToMany
-    private List<AppUser> members;
+    private Set<AppUser> members;
 }

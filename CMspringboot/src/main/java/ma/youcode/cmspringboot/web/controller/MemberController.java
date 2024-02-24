@@ -4,12 +4,14 @@ import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.web.dto.memberDto.MemberResponseDto;
 import ma.youcode.cmspringboot.web.dto.memberDto.memberRequestDto.MemberSaveDto;
 import ma.youcode.cmspringboot.service.aftas.MemberService;
+import ma.youcode.cmspringboot.web.dto.memberDto.memberRequestDto.MemberUpdateDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.naming.NameNotFoundException;
 import javax.validation.constraints.Min;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,19 @@ public class MemberController {
                 .header("X-Total-Page",String.valueOf(memberPage.getTotalPages()))
                 .header("X-Total-Element",String.valueOf(memberPage.getTotalElements()))
                 .body(members);
+    }
+
+    @PutMapping
+    public ResponseEntity<MemberResponseDto> updateMember(@RequestBody  MemberUpdateDto member)
+            throws NameNotFoundException {
+        Member memberSaved = memberService.updateMember(MemberUpdateDto.toMember(member));
+
+        return ResponseEntity.ok(MemberResponseDto.toMemberResponseDto(memberSaved));
+    }
+    @GetMapping("/{num}")
+    public ResponseEntity<MemberResponseDto> getMemberByNum(@RequestParam("num")  Integer num){
+        Member memberSaved = memberService.getMemberByNum(num);
+        return ResponseEntity.ok(MemberResponseDto.toMemberResponseDto(memberSaved));
     }
 
 }

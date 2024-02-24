@@ -31,7 +31,8 @@ public class AppUserServiceImpl implements AppUserService {
     @Override
     public AppUser updateUser(AppUser user) {
         getUserByNum(user.getNum());
-        return userRepository.save(user);    }
+        return userRepository.save(user);
+    }
 
     @Override
     public UserDetailsService userDetailsService() {

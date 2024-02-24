@@ -69,14 +69,14 @@ public class CompetitionController {
                 .header("X-Total-Page", String.valueOf(competitionPage.getTotalPages()))
                 .body(competitionResponseDtoList);
     }
-    @GetMapping("/competition/{code}")
+    @GetMapping("/{code}")
         public ResponseEntity<CompetitionResponseDetailsDto> getCompetitionByCode(@PathVariable("code")
                                                                                 @NotNull String competition_Code){
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .body(CompetitionResponseDetailsDto
                         .toCompetitionResponseDetailsDto(competitionService.getCompetitionByCode(competition_Code)));
     }
-    @GetMapping("/competition/dateNow")
+    @GetMapping("/dateNow")
     public ResponseEntity<CompetitionResponseDetailsDto> getCompetitionByCode(){
         return ResponseEntity.status(HttpStatus.ACCEPTED)
                 .body(CompetitionResponseDetailsDto

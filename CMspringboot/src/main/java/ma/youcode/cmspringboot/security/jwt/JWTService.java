@@ -26,14 +26,11 @@ public class JWTService {
                                         Instant instant,
                                         Collection<? extends GrantedAuthority> authorities,
                                         List<AppRole> roles){
-        String scope = authorities.stream()
-                .map(GrantedAuthority::getAuthority)
-                .collect(Collectors.joining(" "));
         String role = roles.stream()
                 .map(r->r.getName().name())
                 .collect(Collectors.joining(" "));
         return jwtEncoder
-                .encode(JwtEncoderParameters.from(buildToken(subject, instant, scope, role)))
+                .encode(JwtEncoderParameters.from(buildToken(subject, instant, role)))
                 .getTokenValue();
     }
     
@@ -55,14 +52,12 @@ public class JWTService {
     }
     private JwtClaimsSet buildToken(String subject,
                                     Instant instant,
-                                    String scope,
                                     String role){
         return JwtClaimsSet.builder()
                 .subject(subject)
                 .issuedAt(instant)
                 .expiresAt(instant.plus(this.dateExpirationAccessToken, ChronoUnit.MINUTES))
                 .issuer("task-service")
-                .claim("scope",scope)
                 .claim("roles",role)
                 .claim("type_token","ACCESS_TOKEN")
                 .build();
