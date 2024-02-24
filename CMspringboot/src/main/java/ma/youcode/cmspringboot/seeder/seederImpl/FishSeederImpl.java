@@ -1,7 +1,7 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.entity.Fish;
-import ma.youcode.cmspringboot.model.entity.Level;
+import ma.youcode.cmspringboot.entity.Fish;
+import ma.youcode.cmspringboot.entity.Level;
 import ma.youcode.cmspringboot.repository.FishRepository;
 import ma.youcode.cmspringboot.seeder.FishSeeder;
 import org.springframework.beans.factory.annotation.Autowired;

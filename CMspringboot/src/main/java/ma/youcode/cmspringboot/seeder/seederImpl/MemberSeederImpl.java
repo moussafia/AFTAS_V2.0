@@ -1,9 +1,8 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
 import lombok.RequiredArgsConstructor;
-import ma.youcode.cmspringboot.model.entity.AppUser;
-import ma.youcode.cmspringboot.model.entity.IdentityDocumentType;
-import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.entity.IdentityDocumentType;
+import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.repository.MemberRepository;
 import ma.youcode.cmspringboot.seeder.MemberSeeder;
 import org.springframework.security.crypto.password.PasswordEncoder;

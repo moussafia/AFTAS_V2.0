@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.entity.Member;
 import ma.youcode.cmspringboot.repository.MemberRepository;
 import ma.youcode.cmspringboot.service.aftas.MemberService;
 import org.springframework.data.domain.Page;

@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.entity.RefreshToken;
+import ma.youcode.cmspringboot.entity.RefreshToken;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

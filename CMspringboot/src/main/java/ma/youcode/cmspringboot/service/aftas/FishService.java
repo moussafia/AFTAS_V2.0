@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.entity.Fish;
+import ma.youcode.cmspringboot.entity.Fish;
 
 import java.util.List;
 

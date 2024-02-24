@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.seeder;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.entity.Competition;
 
 import java.util.List;
 

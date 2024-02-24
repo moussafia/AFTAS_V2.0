@@ -1,8 +1,8 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
-import ma.youcode.cmspringboot.model.entity.Member;
-import ma.youcode.cmspringboot.model.entity.Ranking;
+import ma.youcode.cmspringboot.entity.Competition;
+import ma.youcode.cmspringboot.entity.Member;
+import ma.youcode.cmspringboot.entity.Ranking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

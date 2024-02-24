@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.seeder.seederImpl;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.entity.Competition;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.seeder.CompetitionSeeder;
 import org.springframework.beans.factory.annotation.Autowired;

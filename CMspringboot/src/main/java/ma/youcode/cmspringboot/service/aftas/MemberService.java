@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.entity.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

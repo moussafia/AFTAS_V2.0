@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
+import ma.youcode.cmspringboot.entity.Competition;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

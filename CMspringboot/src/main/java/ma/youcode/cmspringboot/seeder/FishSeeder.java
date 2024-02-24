@@ -1,7 +1,7 @@
 package ma.youcode.cmspringboot.seeder;
 
-import ma.youcode.cmspringboot.model.entity.Fish;
-import ma.youcode.cmspringboot.model.entity.Level;
+import ma.youcode.cmspringboot.entity.Fish;
+import ma.youcode.cmspringboot.entity.Level;
 
 import java.util.List;
 

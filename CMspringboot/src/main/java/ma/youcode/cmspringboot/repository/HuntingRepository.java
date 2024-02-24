@@ -1,9 +1,9 @@
 package ma.youcode.cmspringboot.repository;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
-import ma.youcode.cmspringboot.model.entity.Fish;
-import ma.youcode.cmspringboot.model.entity.Hunting;
-import ma.youcode.cmspringboot.model.entity.Member;
+import ma.youcode.cmspringboot.entity.Competition;
+import ma.youcode.cmspringboot.entity.Fish;
+import ma.youcode.cmspringboot.entity.Hunting;
+import ma.youcode.cmspringboot.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot;
 
-import ma.youcode.cmspringboot.configuration.RsaKeyConfig;
+import ma.youcode.cmspringboot.security.configuration.RsaKeyConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

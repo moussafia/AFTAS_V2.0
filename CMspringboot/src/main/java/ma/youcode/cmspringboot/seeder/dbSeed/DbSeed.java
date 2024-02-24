@@ -1,6 +1,7 @@
 package ma.youcode.cmspringboot.seeder.dbSeed;
 
-import ma.youcode.cmspringboot.model.entity.*;
+import lombok.RequiredArgsConstructor;
+import ma.youcode.cmspringboot.entity.*;
 import ma.youcode.cmspringboot.seeder.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -10,20 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class DbSeed {
-    private LevelSeeder levelSeeder;
-    private FishSeeder fishSeeder;
-    private CompetitionSeeder competitionSeeder;
-    private MemberSeeder memberSeeder;
-    private RankingSeeder rankingSeeder;
+    private final LevelSeeder levelSeeder;
+    private final FishSeeder fishSeeder;
+    private final CompetitionSeeder competitionSeeder;
+    private final MemberSeeder memberSeeder;
+    private final RankingSeeder rankingSeeder;
+    private final RoleSeeder roleSeeder;
 
-    public DbSeed(LevelSeeder levelSeeder, FishSeeder fishSeeder, CompetitionSeeder competitionSeeder, MemberSeeder memberSeeder, RankingSeeder rankingSeeder) {
-        this.levelSeeder = levelSeeder;
-        this.fishSeeder = fishSeeder;
-        this.competitionSeeder = competitionSeeder;
-        this.memberSeeder = memberSeeder;
-        this.rankingSeeder = rankingSeeder;
-    }
+
 
     @Bean
     public CommandLineRunner start(){
@@ -37,6 +34,7 @@ public class DbSeed {
                 rankingList.add(rankingSeeder.createRankingSeeder(members, cl));
             });
          competitionSeeder.createOne();
+         roleSeeder.createRoles();
 
         };
     }

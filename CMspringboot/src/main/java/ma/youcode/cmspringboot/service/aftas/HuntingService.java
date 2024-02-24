@@ -1,6 +1,6 @@
 package ma.youcode.cmspringboot.service.aftas;
 
-import ma.youcode.cmspringboot.model.entity.*;
+import ma.youcode.cmspringboot.entity.*;
 
 import java.util.List;
 
@@ -13,6 +13,6 @@ public interface HuntingService {
     Hunting isHuntingExist(Hunting hunting);
    // Optional<Hunting> findByMemberAndFishAndCompetition(Hunting hunting);
     List<Hunting> getAllHuntingOfCompetition(Competition competition);
-    Ranking InsertScoreForMemberInCompetition(Ranking ranking,Hunting hunting);
+    Ranking InsertScoreForMemberInCompetition(Ranking ranking, Hunting hunting);
 
 }

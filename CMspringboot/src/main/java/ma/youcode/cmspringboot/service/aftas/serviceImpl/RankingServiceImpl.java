@@ -1,8 +1,8 @@
 package ma.youcode.cmspringboot.service.aftas.serviceImpl;
 
-import ma.youcode.cmspringboot.model.entity.Competition;
-import ma.youcode.cmspringboot.model.entity.Member;
-import ma.youcode.cmspringboot.model.entity.Ranking;
+import ma.youcode.cmspringboot.entity.Competition;
+import ma.youcode.cmspringboot.entity.Member;
+import ma.youcode.cmspringboot.entity.Ranking;
 import ma.youcode.cmspringboot.repository.CompetitionRepository;
 import ma.youcode.cmspringboot.repository.RankingRepository;
 import ma.youcode.cmspringboot.service.aftas.CompetitionService;
