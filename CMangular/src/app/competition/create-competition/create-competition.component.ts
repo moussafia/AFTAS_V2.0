@@ -1,9 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CompetitionServiceService } from '../../services/competitionService/competition-service.service';
 import { CompetitionList } from '../../model/competition/competition-list';
 import { Datastate, State } from '../../state/state';
 import { map } from 'rxjs';
+import { CompetitionServiceService } from '../../services/competitionService/competition-service.service';
 @Component({
   selector: 'app-create-competition',
   templateUrl: './create-competition.component.html',

@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { CompetitionServiceService } from '../services/competitionService/competition-service.service';
-import { CompetitionListWithRank } from '../model/competition/competition-list';
+import { CompetitionListWithRank } from '../../model/competition/competition-list';
 import { catchError, map, of, startWith } from 'rxjs';
-import { Datastate, State } from '../state/state';
+import { Datastate, State } from '../../state/state';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Fish } from '../model/fish/fish';
-import { Hunting } from '../model/hunting';
-import { FishService } from '../services/fish/fish.service';
-import { HuntingResponse } from '../model/hunting/huntingResponse';
-import { HuntingService } from '../services/hunting/hunting.service';
-import { RankingService } from '../services/ranking/ranking.service';
-import { RankingResponse } from '../model/ranking/rankingResponse';
+import { Fish } from '../../model/fish/fish';
+import { Hunting } from '../../model/hunting';
+import { FishService } from '../../services/fish/fish.service';
+import { HuntingResponse } from '../../model/hunting/huntingResponse';
+import { HuntingService } from '../../services/hunting/hunting.service';
+import { RankingService } from '../../services/ranking/ranking.service';
+import { RankingResponse } from '../../model/ranking/rankingResponse';
+import { CompetitionServiceService } from '../../services/competitionService/competition-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -64,7 +64,7 @@ getcompetitionOfDayNow(){
     startWith({dataState: this.dataState.LOADING}),
     catchError(err=> of({dataState: this.dataState.ERROR, error: err.error.message}))
   ).subscribe({
-    next: data => { this.competitionData = data; 
+    next: data => { this.competitionData = data;
     }
   });
 }

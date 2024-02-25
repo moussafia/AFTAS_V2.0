@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CompetitionListComponent } from './competition/competition-list/competition-list.component';
-import { CreateCompetitionComponent } from './competition/create-competition/create-competition.component';
-import { MemberListComponent } from './member/member-list/member-list.component';
-import { CreateMemberComponent } from './member/create-member/create-member.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { CompetitionPageComponent } from './competition/competition-page/competition-page.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 const routes: Routes = [
-  {path:"competitions", component: CompetitionListComponent},
-  {path:"createCompetition", component: CreateCompetitionComponent},
-  {path:"createMember", component: CreateMemberComponent},
-  {path:"allMember", component: MemberListComponent},
-  {path:"dashboard", component: DashboardComponent},
-  {path:"competition/:code", component: CompetitionPageComponent},
-  {path:"", redirectTo:"/dashboard", pathMatch:"full"},
-
-
+  {
+    path: '',  
+    loadChildren: () => import('./layout-module/layout-module.module').then(m => m.LayoutModuleModule)
+  },
+  {
+    path: 'auth',  
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '**',  
+    redirectTo: 'error/404'
+  },
 
 ];
 

@@ -24,11 +24,11 @@ export class CompetitionServiceService {
   }
   
   getDetailsCompetitionOfDateNow():Observable<HttpResponse<CompetitionListWithRank>>{
-    return this.http.get<CompetitionListWithRank>(`${this.host}competition/competition/dateNow`,{
+    return this.http.get<CompetitionListWithRank>(`${this.host}competition/dateNow`,{
       observe: 'response'
     });
 }
 getCompetitionByCode(code:string):Observable<CompetitionDetails>{
-  return this.http.get<CompetitionListWithRank>(`${this.host}competition/competition/${code}`);
+  return this.http.get<CompetitionListWithRank>(`${this.host}competition/${code}`);
 }
 }

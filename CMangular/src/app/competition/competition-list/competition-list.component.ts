@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CompetitionServiceService } from '../../services/competitionService/competition-service.service';
 import { Datastate, State } from '../../state/state';
 import { CompetitionList } from '../../model/competition/competition-list';
 import { Observable, catchError, map, of, startWith } from 'rxjs';
+import { CompetitionServiceService } from '../../services/competitionService/competition-service.service';
 
 @Component({
   selector: 'app-competition-list',
