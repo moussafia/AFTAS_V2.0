@@ -1,26 +1,71 @@
 package ma.youcode.cmspringboot.web.handler;
 
+import ma.youcode.cmspringboot.web.dto.authDto.ErrorResponse;
+import ma.youcode.cmspringboot.web.dto.authDto.Response;
+import ma.youcode.cmspringboot.web.exception.CustomValidationException;
+import ma.youcode.cmspringboot.web.exception.TokenException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.oauth2.jwt.JwtValidationException;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
+
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
 public class ControllerAdvice {
-@ExceptionHandler(Throwable.class)
-@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-public ResponseEntity<Map<String, String>> handleGenericException(Throwable ex) {
-    Map<String, String> error = new HashMap<>();
-    error.put("error", "Internal Server Error");
-    error.put("message", ex.getMessage());
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-}
-@ExceptionHandler(IllegalStateException.class)
-public ResponseEntity<Map<String, String>> handelIllegalState(IllegalStateException il){
-    Map<String, String> error = new HashMap<>();
-    error.put("error","Internal Server Error");
-    error.put("message",il.getMessage());
-    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
-}
+    @ExceptionHandler(value = TokenException.class)
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    public ResponseEntity<ErrorResponse> handleRefreshTokenException(TokenException ex, WebRequest request){
+        final ErrorResponse errorResponse = ErrorResponse.builder()
+                .timestamp(Instant.now())
+                .error("Invalid Token")
+                .status(HttpStatus.UNAUTHORIZED.value())
+                .message(ex.getMessage())
+                .path(request.getDescription(false))
+                .build();
+        return new ResponseEntity<>(errorResponse,HttpStatus.UNAUTHORIZED);
+    }
+    @ExceptionHandler(value = JwtValidationException.class)
+    @ResponseStatus(HttpStatus.FORBIDDEN)
+    public ResponseEntity<ErrorResponse> handleRefreshTokenException(JwtValidationException ex, WebRequest request){
+        final ErrorResponse errorResponse = ErrorResponse.builder()
+                .timestamp(Instant.now())
+                .error("Invalid Token")
+                .status(HttpStatus.FORBIDDEN.value())
+                .message(ex.getMessage())
+                .path(request.getDescription(false))
+                .build();
+        return new ResponseEntity<>(errorResponse,HttpStatus.FORBIDDEN);
+    }
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return errors;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<Response<Object>> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.builder()
+                .message(ex.getMessage())
+                .build());
+    }
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(CustomValidationException.class)
+    public ResponseEntity<Response<Object>> handleCustomValidationException(CustomValidationException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.builder()
+                .message(ex.getMessage())
+                .build());
+    }
 }

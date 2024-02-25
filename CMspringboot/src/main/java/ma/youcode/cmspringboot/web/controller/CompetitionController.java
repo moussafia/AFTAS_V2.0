@@ -9,6 +9,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
 import javax.validation.Valid;
@@ -16,6 +20,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -28,6 +33,7 @@ public class CompetitionController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAuthority('MANAGER')")
     public ResponseEntity<List<CompetitionResponseDto>> getAllCompetition(@RequestParam(defaultValue = "0")
                                                                           @Valid @Min(0) Integer page,
                                                                           @RequestParam(defaultValue = "6") @Min(1) Integer size,
@@ -41,7 +47,7 @@ public class CompetitionController {
         competitionPage.forEach(cp->{
             competitionResponseDtoList.add(CompetitionResponseDto.toCompetitionResponseDto(cp));
         });
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .header("X-Total-Page", String.valueOf(competitionPage.getTotalPages()))
                 .header("X-Total-Element", String.valueOf(competitionPage.getTotalElements()))
                 .body(competitionResponseDtoList);
@@ -83,4 +89,6 @@ public class CompetitionController {
                         .toCompetitionResponseDetailsDto(competitionService.getCompetitionByDate())
                 );
     }
+
+
 }

@@ -22,6 +22,6 @@ public interface RankingRepository extends JpaRepository<Ranking, Long> {
     Optional<List<Ranking>> getPodium(String competition_code);
     @Query("SELECT COUNT(r.competition) FROM Ranking r WHERE r.competition =:competition")
     Integer countAvailablePlace(Competition competition);
-    @Query("SELECT r.competition FROM Ranking r WHERE r.member =:member")
+    @Query("SELECT r.competition FROM Ranking r WHERE r.member = :member")
     Optional<Page<Competition>> findByMember(@Param("member") Member member, Pageable pageable);
 }

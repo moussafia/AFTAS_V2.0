@@ -34,7 +34,7 @@ public class MemberServiceImpl implements MemberService {
     }
     @Override
     public Member updateMember(Member member) throws NameNotFoundException {
-        Member memberExisted = ValidateIfExistForUpdate(member);
+        Member memberExisted = getMemberByNum(member.getNum());
         Set<AppRole> roleSet = ValidateIfRoleExist(member.getRoles());
         member.setRoles(roleSet);
         member.setPassword(memberExisted.getPassword());
@@ -77,11 +77,6 @@ public class MemberServiceImpl implements MemberService {
                 .ifPresent(m->{
                     throw new IllegalStateException(m.getIdentityNumber() + " is Already exist");
                 });
-    }
-    Member ValidateIfExistForUpdate(Member member){
-        Integer num = member.getNum();
-        return memberRepository.findByNum(num)
-                .orElseThrow(() -> new IllegalStateException("member with number adherent " + member.getNum() + " not exist"));
     }
 
 }

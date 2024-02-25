@@ -64,19 +64,14 @@ public class RankingController {
     }
     @GetMapping("/myCompetition")
     public ResponseEntity<List<CompetitionResponseDto>> getMyCompetition(@RequestParam(defaultValue = "0")
-                                                                          @Valid @Min(0) Integer page,
-                                                                          @RequestParam(defaultValue = "6") @Min(1) Integer size,
-                                                                          @RequestParam(defaultValue = "asc") @Pattern(regexp = "asc|desc" ,message = "invalid direction") String directionSort,
-                                                                          @RequestParam(defaultValue = "date") String properties){
-        Sort.Direction direction = Sort.Direction.fromString(directionSort);
-        Sort sort = Sort.by(direction, properties);
-        PageRequest pageRequest = PageRequest.of(page, size, sort);
+                                                                          @Valid @Min(0) int page){
+        PageRequest pageRequest = PageRequest.of(page,6);
         Page<Competition> competitionPage = rankingService.getMyCompetition(pageRequest);
         List<CompetitionResponseDto> competitionResponseDtoList = new ArrayList<>();
         competitionPage.forEach(cp->{
             competitionResponseDtoList.add(CompetitionResponseDto.toCompetitionResponseDto(cp));
         });
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .header("X-Total-Page", String.valueOf(competitionPage.getTotalPages()))
                 .header("X-Total-Element", String.valueOf(competitionPage.getTotalElements()))
                 .body(competitionResponseDtoList);

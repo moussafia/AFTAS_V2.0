@@ -68,7 +68,7 @@ public class MemberController {
         return ResponseEntity.ok(MemberResponseDto.toMemberResponseDto(memberSaved));
     }
     @GetMapping("/{num}")
-    public ResponseEntity<MemberResponseDto> getMemberByNum(@RequestParam("num")  Integer num){
+    public ResponseEntity<MemberResponseDto> getMemberByNum(@PathVariable("num")  Integer num){
         Member memberSaved = memberService.getMemberByNum(num);
         return ResponseEntity.ok(MemberResponseDto.toMemberResponseDto(memberSaved));
     }

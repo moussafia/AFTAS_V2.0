@@ -2,6 +2,7 @@ package ma.youcode.cmspringboot.security.jwt;
 
 import lombok.RequiredArgsConstructor;
 import ma.youcode.cmspringboot.entity.AppRole;
+import ma.youcode.cmspringboot.web.exception.TokenException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
 public class JWTService {
     private final JwtEncoder jwtEncoder;
     private final JwtDecoder jwtDecoder;
-    @Value("${token.access.date-expiration}")
+    @Value("${token.access.date-expiration-minute}")
     private long dateExpirationAccessToken;
 
     
@@ -35,14 +36,14 @@ public class JWTService {
     }
     
     public String extractUserName(String token){
-        Jwt jwt = jwtDecoder.decode(token);
-        return jwt.getSubject();
+            Jwt jwt = jwtDecoder.decode(token);
+            return jwt.getSubject();
     }
 
     
     public boolean isTokenValid(String jwt, UserDetails userDetails) {
-        final String emailUser = extractUserName(jwt);
-        return (emailUser.equals(userDetails.getUsername()))
+        final String username = extractUserName(jwt);
+        return (username.equals(userDetails.getUsername()))
                 && !isTokenExpired(jwt);
     }
     private boolean isTokenExpired(String token) {
@@ -57,7 +58,7 @@ public class JWTService {
                 .subject(subject)
                 .issuedAt(instant)
                 .expiresAt(instant.plus(this.dateExpirationAccessToken, ChronoUnit.MINUTES))
-                .issuer("task-service")
+                .issuer("AFTAS-service")
                 .claim("roles",role)
                 .claim("type_token","ACCESS_TOKEN")
                 .build();
