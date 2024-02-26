@@ -9,6 +9,7 @@ import { RowTableComponent } from './member-list/table/row-table/row-table.compo
 import { PaginationComponent } from './member-list/table/pagination/pagination.component';
 import { SuccesComponent } from './create-member/alert/succes/succes.component';
 import { ErrorComponent } from './create-member/alert/error/error.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +28,8 @@ import { ErrorComponent } from './create-member/alert/error/error.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
 
   ],
   exports: [

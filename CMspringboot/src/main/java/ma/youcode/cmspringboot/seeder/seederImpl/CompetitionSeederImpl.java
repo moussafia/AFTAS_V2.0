@@ -30,8 +30,8 @@ public class CompetitionSeederImpl implements CompetitionSeeder {
     @Override
     public List<Competition> createListCompetition() {
         List<Competition> competitionList = new ArrayList<>();
-        competitionList.add(new Competition().builder().amount(300f).code("ims-21-02-24").location("casablanca").date(LocalDate.of(2024, 02, 21)).startDate(LocalTime.of(8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
-        competitionList.add(new Competition().builder().amount((float) (Math.random()*300)).code("ims-13-03-24").location("rabat").date(LocalDate.of(2024, 03, 13)).startDate(LocalTime.of( 8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
+        competitionList.add(new Competition().builder().amount(300f).code("ims-26-02-24").location("casablanca").date(LocalDate.of(2024, 02, 26)).startDate(LocalTime.of(8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
+        competitionList.add(new Competition().builder().amount((float) (Math.random()*300)).code("ims-27-03-24").location("rabat").date(LocalDate.of(2024, 03, 27)).startDate(LocalTime.of( 8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
         competitionList.add(new Competition().builder().amount((float) (Math.random()*300)).code("ims-14-03-24").location("tanger").date(LocalDate.of(2024, 03, 14)).startDate(LocalTime.of( 8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
         competitionList.add(new Competition().builder().amount((float) (Math.random()*300)).code("ims-15-03-24").location("Al Hoceïma").date(LocalDate.of(2024, 03, 15)).startDate(LocalTime.of( 8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());
         competitionList.add(new Competition().builder().amount((float) (Math.random()*300)).code("ims-16-03-24").location("agadir").date(LocalDate.of(2024, 03, 16)).startDate(LocalTime.of( 8, 0)).endTime(LocalTime.of(20, 0)).numberOfParticipants((int) (Math.random()*400)).build());

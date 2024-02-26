@@ -11,9 +11,8 @@ export const juryGuard: CanActivateFn = (route, state) => {
 };
 
 function checkLogIn(authService: AuthService, router: Router, roleEnum: typeof RoleEnum): boolean {
-  const roles = authService.tokenDecoded()?.roles.split(" ");
-  
-  if (authService.isLogIn && roles && roles.includes(roleEnum.JURY.toString())) {
+  const roles = authService.tokenDecoded()?.roles.split(" ");  
+  if (authService.isLogIn && roles && (roles.includes(roleEnum.JURY.toString()) || roles.includes(roleEnum.MANAGER.toString()))) {
     return true;
   }
   router.navigate(['/login']);

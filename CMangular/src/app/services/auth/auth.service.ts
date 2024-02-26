@@ -8,6 +8,9 @@ import { jwtDecode } from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthService {
+  logout() {
+    throw new Error('Method not implemented.');
+  }
   private static readonly _jwt_key="accessToken";
   private static readonly _jwtRefresh_key="refreshToken";
   host: string='http://localhost:8080/api/v1/auth'
@@ -18,7 +21,7 @@ export class AuthService {
     return localStorage.getItem(AuthService._jwt_key) ?? '';
   }
 
-  private set jwt(value:string){
+  set jwt(value:string){
     localStorage.setItem(AuthService._jwt_key, value);
   }
 
@@ -32,6 +35,9 @@ export class AuthService {
   set refreshToken(value: string) {
     localStorage.setItem(AuthService._jwtRefresh_key, value);
   }
+  logOut(){
+    localStorage.clear();
+ }
 
   tokenDecoded(): TokenDecoced | null{
     try{

@@ -19,7 +19,8 @@ public record MemberResponseDto(
     String nationality,
     Integer number,
     LocalDate dateAccession,
-    Set<String> roles
+    Set<String> roles,
+    boolean isAccountNonLocked
 ) {
     public static MemberResponseDto toMemberResponseDto(Member member){
         Set<String> roles = member.getRoles()
@@ -32,7 +33,8 @@ public record MemberResponseDto(
                 member.getIdentityNumber(),
                 member.getNationality(), member.getNum(),
                 member.getAccessionDate(),
-                roles
+                roles,
+                member.isAccountNonLocked()
                 );
 }
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MemberList } from '../../model/member/member-list';
+import { MemberList, MemberResponseByNum } from '../../model/member/member-list';
 import { Observable } from 'rxjs';
 import { MemberPost } from '../../model/member/member-post';
 
@@ -30,5 +30,12 @@ export class MemberServiceService {
       observe: 'response',
       headers: headers
     });
+}
+getMemberByNum(num: string):Observable<MemberResponseByNum>{
+  return this.http.get<MemberResponseByNum>(`${this.host}member/update?num=${num}`);
+}
+updateMember(member:MemberResponseByNum):Observable<MemberResponseByNum>{
+  console.log("update"+ member);
+  return this.http.put<MemberResponseByNum>(`${this.host}member`, member);
 }
 }

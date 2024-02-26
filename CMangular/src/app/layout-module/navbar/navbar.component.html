@@ -9,13 +9,32 @@
         </div>
     </div>
     <div class="profile">
-        <i class="far fa-bell notification"></i>
-        <div class="flex flex-col justify-center justify-center">
-            <img src="avatarProfile.png" />
-            <button id="dropdownVousButton" data-dropdown-toggle="dropdownVous" class="flex items-center">
-                <p class="text-sm">vous</p>
-                <i class="fa-duotone fa-caret-down text-sm px-0.5" style="--fa-secondary-opacity: 1"></i>
+        <button id="dropdownHoverButton" 
+        data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" 
+        class="text-white bg-blue-700 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+        {{username}}
             </button>
+    </div> 
+        <!-- Dropdown menu -->
+        <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                (click)="logout()"
+                >Sign out</a>
+              </li>
+            </ul>
         </div>
-    </div>
 </nav>
+
+
+    

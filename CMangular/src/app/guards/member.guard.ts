@@ -13,7 +13,13 @@ export const memberGuard: CanActivateFn = (route, state) => {
 function checkLogIn(authService: AuthService, router: Router, roleEnum: typeof RoleEnum): boolean {
   const roles = authService.tokenDecoded()?.roles.split(" ");
   
-  if (authService.isLogIn && roles && roles.includes(roleEnum.MEMBER.toString())) {
+  if (authService.isLogIn && roles && 
+    (
+      roles.includes(roleEnum.MEMBER.toString())
+    || roles.includes(roleEnum.MANAGER.toString())
+     || roles.includes(roleEnum.JURY.toString())
+     )
+     ) {
     return true;
   }
   router.navigate(['/login']);

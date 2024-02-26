@@ -1,3 +1,7 @@
+<div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert"
+*ngIf="succesMessage" style="position: absolute;z-index: 10000;">
+    <span class="font-medium">Warning alert!</span> {{succesMessage}}
+  </div>
 <section class="flex items-center h-screen font-poppins" style="margin-top: 60px;">
     <div class="relative justify-center flex-1 max-w-6xl py-4 mx-auto text-center lg:py-10 ">
         <div class="" x-data="{ open: false }">
@@ -9,14 +13,18 @@
                         </div>
                         <div class="w-full px-4 md:w-1/2 ">
                             <h2 class="mb-4 text-3xl font-bold text-gray-700 dark:text-gray-300">
-                                Create member
+                                Update member
                             </h2>
                             <p class="mb-4 text-base text-gray-500 dark:text-gray-400">
                                 Welcome to Aftas, club de sports à Tiznit
                             </p>
                             <form class="block rounded-md shadow-sm" *ngIf="memberFormGroupe" [formGroup]="memberFormGroupe" >
-
-                                <input type="text" formControlName="date" formControlName="firstName"
+                                <input type="text" formControlName="username"
+                                class="w-full px-4 py-2 mb-4 bg-gray-100 border border-gray-200 rounded dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 "
+                                name="" placeholder="username">
+                                <input type="hidden" formControlName="num"
+                                >
+                                <input type="text" formControlName="firstName"
                                     class="w-full px-4 py-2 mb-4 bg-gray-100 border border-gray-200 rounded dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 "
                                     name="" placeholder=" First name">
                                 <input type="text" formControlName="lastName"
@@ -31,13 +39,31 @@
                                       <option value="CIN">CIN</option>
                                       <option value="CARTE_RESIDENCE">CARTE RESIDENCE</option>
                                       <option value="PASSPORT">PASSPORT</option>
-                                    </select>                                   
+                                    </select>                               
                                 <input type="text" formControlName="identityNumber"
                                 class="w-full px-4 py-2 mb-4 bg-gray-100 border border-gray-200 rounded dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 "
                                 name="" placeholder=" Identity">
+                                <label for="">Assign Role</label>
+                                <select id="countries" formControlName="roles" name="roles" 
+                                multiple
+                                class="w-full px-4 py-2 mb-4 bg-gray-100 border border-gray-200 rounded dark:border-gray-700 dark:bg-gray-700 dark:text-gray-300 "
+                                  >
+                                  <option [value]="roleEnum.MEMBER">{{roleEnum.MEMBER}}</option>
+                                  <option [value]="roleEnum.MANAGER">{{roleEnum.MANAGER}}</option>
+                                  <option [value]="roleEnum.JURY">{{roleEnum.JURY}}</option>
+                                </select> 
+                                <div class="w-full px-4 py-2 mb-4">
+                                    <label for="">Active/desactive this Account</label>
+                                    <div>
+                                        <label class="switch">  
+                                            <input type="checkbox" formControlName="isAccountNonLocked">
+                                            <span class="slider round"></span>
+                                          </label> 
+                                    </div>
+                                </div>
                                 <button (click)="createMember()"
                                     class="inline-flex justify-center w-full px-4 py-4 text-white bg-blue-500 rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 hover:bg-blue-700">
-                                    Create competition
+                                    Update Member
                                 </button>
                             </form>
                         </div>
@@ -45,15 +71,5 @@
                 </div>
             </div>
         </div>
-        <div class="response">
-            <ng-container *ngIf="memberResult as result" [ngSwitch]="result.dataState">
-                <ng-container  *ngSwitchCase="dataState.LOADED">
-                    <app-succes  [memberResult]="memberResult"></app-succes>
-                </ng-container>
-                <ng-container *ngSwitchCase="dataState.ERROR">
-                    <app-error  [memberResult]="memberResult" ></app-error>
-                </ng-container>
-            </ng-container>
-    </div>
     </div>
 </section>

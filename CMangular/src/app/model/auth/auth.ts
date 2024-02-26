@@ -18,7 +18,10 @@ export interface SignUpResponse {
     message: string,
     result: any
 }
-export interface ErrorResponceAuth {
+export interface ErrorResponse {
+    error: ErrorResponseAuth,
+}
+export interface ErrorResponseAuth {
     status: number,
     error: string,
     timestamp: string,
